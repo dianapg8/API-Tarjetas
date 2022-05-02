@@ -1,0 +1,1 @@
+COPY tarjetas_schema.tarjetas FROM '~/src/main/resources/database/csv/Tarjetas.csv' WITH (FORMAT csv);
