@@ -18,7 +18,7 @@ import static javax.persistence.GenerationType.SEQUENCE;
 @JsonFilter("tarjetaFiltro")
 @Builder
 @Entity
-@Table(name = "tarjetas")
+@Table(name = "tarjetas", schema = "tarjetas_schema")
 public class Tarjeta implements Serializable {
     @Id
     @SequenceGenerator(

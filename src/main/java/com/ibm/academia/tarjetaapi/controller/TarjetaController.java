@@ -30,6 +30,7 @@ public class TarjetaController {
 
     @GetMapping("/recomendar")
     public ResponseEntity<?> recomendarTarjetas(@RequestParam String preferencia,@RequestParam Integer edad, @RequestParam Double salario){
+        /*TODO: Validaciones de paramaetros*/
         return tarjetaService.recomendarTarjetas(preferencia, edad, salario);
     }
 }
