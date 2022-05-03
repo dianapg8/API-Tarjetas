@@ -1,3 +1,6 @@
+
+/*create database tarjetasapi; */
+
 CREATE SCHEMA tarjetas_schema;
 create table tarjetas_schema.tarjetas
 (
