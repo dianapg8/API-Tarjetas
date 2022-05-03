@@ -2,9 +2,11 @@ package com.ibm.academia.tarjetaapi.entities;
 
 import com.fasterxml.jackson.annotation.JsonFilter;
 import lombok.*;
+import org.hibernate.Hibernate;
 
 import javax.persistence.*;
 import java.io.Serializable;
+import java.util.Objects;
 
 import static javax.persistence.GenerationType.SEQUENCE;
 
@@ -58,4 +60,17 @@ public class Tarjeta implements Serializable {
     private Date fechaModificacion;
  */
     private static final long serialVersionUID = 2536383062378803095L;
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || Hibernate.getClass(this) != Hibernate.getClass(o)) return false;
+        Tarjeta tarjeta = (Tarjeta) o;
+        return idTarjeta != null && Objects.equals(idTarjeta, tarjeta.idTarjeta);
+    }
+
+    @Override
+    public int hashCode() {
+        return getClass().hashCode();
+    }
 }
