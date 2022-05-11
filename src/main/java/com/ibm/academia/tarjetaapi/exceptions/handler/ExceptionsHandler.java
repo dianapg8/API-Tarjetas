@@ -15,6 +15,7 @@ import org.springframework.web.method.annotation.MethodArgumentTypeMismatchExcep
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Objects;
 
 @RestControllerAdvice
 public class ExceptionsHandler {
@@ -72,7 +73,7 @@ public class ExceptionsHandler {
         response.put("message", "El tipo de dato que enviaste no coincide con el esperado");
         response.put("param", ex.getName());
         response.put("paramTypeExpected", ex.getParameter().getParameterType());
-        response.put("paramTypeGot", ex.getValue().getClass().getName());
+        response.put("paramTypeGot", Objects.requireNonNull(ex.getValue()).getClass().getName());
         return response;
     }
 }

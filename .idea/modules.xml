@@ -2,7 +2,7 @@
 <project version="4">
   <component name="ProjectModuleManager">
     <modules>
-      <module fileurl="file://$PROJECT_DIR$/.idea/ProyectoAcademiaIBM.iml" filepath="$PROJECT_DIR$/.idea/ProyectoAcademiaIBM.iml" />
+      <module fileurl="file://$PROJECT_DIR$/tarjetaapi.iml" filepath="$PROJECT_DIR$/tarjetaapi.iml" />
     </modules>
   </component>
 </project>

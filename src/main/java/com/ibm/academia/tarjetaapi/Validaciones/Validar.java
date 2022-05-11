@@ -12,7 +12,7 @@ public class Validar {
       return (preferencia.equalsIgnoreCase("shopping") ||
               preferencia.equalsIgnoreCase("mystyle")||
               preferencia.equalsIgnoreCase("mybusiness") ||
-            preferencia.equalsIgnoreCase("travels")) ||
+              preferencia.equalsIgnoreCase("travels")) ||
               preferencia.equalsIgnoreCase("sports") ||
               preferencia.equalsIgnoreCase("help");
 
