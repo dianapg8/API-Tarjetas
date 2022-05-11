@@ -1,4 +1,4 @@
-package com.ibm.academia.tarjetaapi.entities;
+package com.ibm.academia.tarjetaapi.models.entities;
 
 import com.fasterxml.jackson.annotation.JsonFilter;
 import lombok.*;
@@ -17,7 +17,6 @@ import static javax.persistence.GenerationType.SEQUENCE;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
-@JsonFilter("tarjetaFiltro")
 @Builder
 @Entity
 @Table(name = "tarjetas", schema = "tarjetas_schema")

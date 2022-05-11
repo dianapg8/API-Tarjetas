@@ -1,5 +1,3 @@
-
-CREATE SCHEMA tarjetas_schema;
 create table tarjetas_schema.tarjetas
 (
     id_tarjeta     bigint           not null

@@ -1,6 +1,6 @@
 package com.ibm.academia.tarjetaapi.repositories;
 
-import com.ibm.academia.tarjetaapi.entities.Tarjeta;
+import com.ibm.academia.tarjetaapi.models.entities.Tarjeta;
 import org.springframework.data.jpa.repository.JpaRepository;
 import org.springframework.data.jpa.repository.Query;
 import org.springframework.stereotype.Repository;
