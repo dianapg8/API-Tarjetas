@@ -14,7 +14,6 @@ import org.springframework.web.bind.annotation.RestController;
 
 import java.util.List;
 
-import static com.ibm.academia.tarjetaapi.Validaciones.Validar.*;
 import static java.util.stream.Collectors.toList;
 
 /*
@@ -52,27 +51,16 @@ public class TarjetaController {
     *   */
 
     @GetMapping("/recomendar")
-    public ResponseEntity<?> recomendarTarjetas(@RequestParam(required = true) String preferencia,@RequestParam(required = true) Integer edad, @RequestParam(required = true) Double salario){
-        /*TODO: Validaciones de paramaetros*/
-        if(!validarPreferencia(preferencia)){
-            throw new PreferenciaNoValida("La preferencia " + preferencia + " no existe");
-
-        }
-        if(validarEdad(edad)){
-            throw new EdadNoValida("El usuario no cumple con la edad permitida");
-
-        }
-        if(validarSalario(salario)){
-            throw new SalarioNoValido("El usuario no cumple con el mimimo salario parametrizado");
-        }
+    public ResponseEntity<?> recomendarTarjetas(@RequestParam(required = true) String preferencia,
+                                                @RequestParam(required = true) Integer edad,
+                                                @RequestParam(required = true) Double salario)
+    {
         List<Tarjeta> tarjetas = tarjetaService.recomendarTarjetas(preferencia, edad, salario);
-        if(tarjetas.isEmpty()){
-            throw new TarjetaNoEncontrada("El usuario no es apto para una tarjeta");
-        }
         return new ResponseEntity<>(
                 tarjetas.stream()
                         .map(tarjetaMapper::mapTarjeta)
                         .collect(toList()),
                 HttpStatus.OK);
     }
+
 }

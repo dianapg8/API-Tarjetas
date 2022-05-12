@@ -19,7 +19,8 @@ import static javax.persistence.GenerationType.SEQUENCE;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "tarjetas", schema = "tarjetas_schema")
+@Table(name = "tarjetas")
+//@Table(name = "tarjetas",schema = "tarjetas_schema")
 public class Tarjeta implements Serializable {
     @Id
     @SequenceGenerator(

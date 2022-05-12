@@ -30,7 +30,7 @@ public class ExceptionsHandler {
     }
     @ExceptionHandler(value = PreferenciaNoValida.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public Map<String,Object> tarjetaNoEncontrada(PreferenciaNoValida ex){
+    public Map<String,Object> preferenciaNoValida(PreferenciaNoValida ex){
         Map<String, Object> response = new HashMap<>();
         response.put("message", ex.getMessage());
         return response;
@@ -38,7 +38,7 @@ public class ExceptionsHandler {
     }
     @ExceptionHandler(value = EdadNoValida.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public Map<String,Object> tarjetaNoEncontrada(EdadNoValida ex){
+    public Map<String,Object> edadNoValida(EdadNoValida ex){
         Map<String, Object> response = new HashMap<>();
         response.put("message", ex.getMessage());
         return response;
@@ -46,7 +46,7 @@ public class ExceptionsHandler {
     }
     @ExceptionHandler(value = SalarioNoValido.class)
     @ResponseStatus(HttpStatus.NOT_FOUND)
-    public Map<String,Object> tarjetaNoEncontrada(SalarioNoValido ex){
+    public Map<String,Object> salarioNoValido(SalarioNoValido ex){
         Map<String, Object> response = new HashMap<>();
         response.put("message", ex.getMessage());
         return response;
