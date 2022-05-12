@@ -48,7 +48,7 @@ class TarjetaControllerTest {
 
 
     @Test
-    @DisplayName("Datos Validos para tarjeta controller")
+    @DisplayName("Si un perfil es valido")
     void recomendarTarjeta() {
         //Given
         Tarjeta tarjetaUno = new Tarjeta(1L,"bsmart","shopping",18,32,7000d,14999d);
@@ -67,7 +67,7 @@ class TarjetaControllerTest {
 
     }
     @Test
-    @DisplayName("When the profile is invalid, should return not found")
+    @DisplayName("Si un perfil es invalido")
     void invalidProfileShouldReturnNotFound() throws Exception {
         when(service.recomendarTarjetas("travels", 74,10500d))
                 .thenReturn(new ArrayList<>());

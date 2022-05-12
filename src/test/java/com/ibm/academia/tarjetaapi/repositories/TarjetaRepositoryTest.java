@@ -18,7 +18,7 @@ public class TarjetaRepositoryTest {
 
 
     @Test
-    @DisplayName("Preferencia no validad")
+    @DisplayName("Si preferencia no es valida")
     void preferenciaInvalidad(){
 
         List<Tarjeta> expected = repository.recomendarTarjetas("Education",19,7000d);
@@ -28,7 +28,7 @@ public class TarjetaRepositoryTest {
     }
 
     @Test
-    @DisplayName("Edad menor que 18 o mayor que 75")
+    @DisplayName("Si la edad no es valida")
     void edadInvalidad(){
         Integer edad = 17;
         //Integer edad = 76;
@@ -38,7 +38,7 @@ public class TarjetaRepositoryTest {
     }
 
     @Test
-    @DisplayName("Salario menor que 7000")
+    @DisplayName("Si el salario no es valido")
     void salarioInvalido(){
         Double salario = 1700d;
         List<Tarjeta> expected = repository.recomendarTarjetas("shopping",19,salario);
@@ -47,7 +47,7 @@ public class TarjetaRepositoryTest {
     }
 
     @Test
-    @DisplayName("Datos validos")
+    @DisplayName("Si los datos ingresados son validos")
     void datosValidos(){
         List<Tarjeta> expected = repository.recomendarTarjetas("shopping",19,8000d);
         assertThat(expected.size()).isGreaterThan(0);
