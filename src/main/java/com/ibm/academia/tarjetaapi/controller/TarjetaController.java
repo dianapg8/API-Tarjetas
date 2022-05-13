@@ -4,6 +4,8 @@ import com.ibm.academia.tarjetaapi.mapper.TarjetaMapper;
 import com.ibm.academia.tarjetaapi.services.TarjetaService;
 import com.ibm.academia.tarjetaapi.models.entities.Tarjeta;
 import com.ibm.academia.tarjetaapi.exceptions.*;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
@@ -23,8 +25,9 @@ Puerto: 8081
 
 
 @RestController
-@RequestMapping("api/v1/tarjeta")
 public class TarjetaController {
+
+    Logger logger = LoggerFactory.getLogger(TarjetaController.class);
 
 
     private final TarjetaMapper tarjetaMapper;
