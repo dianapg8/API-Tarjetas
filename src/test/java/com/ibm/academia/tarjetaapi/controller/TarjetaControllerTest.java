@@ -33,13 +33,14 @@ import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.
 class TarjetaControllerTest {
 
     private TarjetaController controller;
+
     private TarjetaService service;
     private TarjetaMapper mapper = new TarjetaMapper();
     @Autowired
     private MockMvc mvc;
 
 
-    @BeforeEach
+   @BeforeEach
     public void setUp(){
         service = Mockito.mock(TarjetaService.class);
         controller = new TarjetaController(mapper,service);
@@ -78,5 +79,6 @@ class TarjetaControllerTest {
                         .queryParam("salario", "10500"))
                 .andExpect(status().isNotFound());
     }
+
 
 }
