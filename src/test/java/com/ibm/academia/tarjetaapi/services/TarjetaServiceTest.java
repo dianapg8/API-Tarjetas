@@ -24,7 +24,7 @@ public class TarjetaServiceTest {
     private TarjetaService service;
 
     @Test
-    @DisplayName("Edad invalidad")
+    @DisplayName("Edad invalida")
     void edadInvalidad(){
 
         assertThrows(EdadNoValida.class, () -> {

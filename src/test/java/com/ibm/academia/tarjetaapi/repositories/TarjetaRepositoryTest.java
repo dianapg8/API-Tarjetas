@@ -13,6 +13,7 @@ import static org.assertj.core.api.AssertionsForClassTypes.assertThat;
 
 @DataJpaTest
 public class TarjetaRepositoryTest {
+
     @Autowired
     private TarjetaRepository repository;
 

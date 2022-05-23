@@ -1,9 +1,17 @@
 package com.ibm.academia.tarjetaapi.controller;
 
 import com.ibm.academia.tarjetaapi.mapper.TarjetaMapper;
+import com.ibm.academia.tarjetaapi.models.dto.TarjetaDTO;
 import com.ibm.academia.tarjetaapi.services.TarjetaService;
 import com.ibm.academia.tarjetaapi.models.entities.Tarjeta;
 import com.ibm.academia.tarjetaapi.exceptions.*;
+import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
+import io.swagger.v3.oas.annotations.Parameters;
+import io.swagger.v3.oas.annotations.media.Content;
+import io.swagger.v3.oas.annotations.media.Schema;
+import io.swagger.v3.oas.annotations.responses.ApiResponse;
+import io.swagger.v3.oas.annotations.responses.ApiResponses;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -53,6 +61,18 @@ public class TarjetaController {
     *  TODO: Creacion entidad de respuesta en el propio controlador
     *   */
 
+    @Operation(summary = "Buscar tarjeta adecuada",description = "Devolverá una lista de tarjetas " +
+            "preferibles para un perfil de usuario en especifico")
+    @ApiResponses(value = {
+            @ApiResponse(responseCode = "200",description = "Tarjetas encontradas.",content = {@Content(mediaType = "application/json",schema = @Schema(implementation = TarjetaDTO.class))}),
+            @ApiResponse(responseCode = "404",description = "Perfil no valido para obtener una tarjeta.",content = @Content),
+            @ApiResponse(responseCode = "400",description = "Petición no valida.",content = @Content)
+    })
+    @Parameters(value = {
+            @Parameter(name = "preferencia",description = "Preferencia del usuario",required = true),
+            @Parameter(name = "edad",description = "Edad del usuario",required = true),
+            @Parameter(name = "salario",description = "Salario del usuario",required = true)
+    })
     @GetMapping("/recomendar")
     public ResponseEntity<?> recomendarTarjetas(@RequestParam(required = true) String preferencia,
                                                 @RequestParam(required = true) Integer edad,
