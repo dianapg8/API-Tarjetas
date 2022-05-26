@@ -1,4 +1,5 @@
 
+
 INSERT INTO tarjetas(id_tarjeta, nombre_tarjeta, preferencia, edad_min, edad_max, salario_min, salario_max) VALUES (1, 'bsmart','shopping', 18, 32, 7000.0, 14999.0);
 INSERT INTO tarjetas(id_tarjeta, nombre_tarjeta, preferencia, edad_min, edad_max, salario_min, salario_max) VALUES (2, 'bsmart','shopping', 18, 23, 15000.0, NULL);
 INSERT INTO tarjetas(id_tarjeta, nombre_tarjeta, preferencia, edad_min, edad_max, salario_min, salario_max) VALUES (3, 'bsmart','mystyle', 18, 75, 7000.0, 14999.00);
@@ -32,5 +33,6 @@ INSERT INTO tarjetas(id_tarjeta, nombre_tarjeta, preferencia, edad_min, edad_max
 INSERT INTO tarjetas(id_tarjeta, nombre_tarjeta, preferencia, edad_min, edad_max, salario_min, salario_max) VALUES (31, 'pumas','sports', 18, 75, 7000.0, 34999.0);
 INSERT INTO tarjetas(id_tarjeta, nombre_tarjeta, preferencia, edad_min, edad_max, salario_min, salario_max) VALUES (32, 'la verde','sports', 18, 75, 7000.0, 34999.0);
 INSERT INTO tarjetas(id_tarjeta, nombre_tarjeta, preferencia, edad_min, edad_max, salario_min, salario_max) VALUES (33, 'marti premium','sports', 18, 75, 35000.0, null);
+
 
 
