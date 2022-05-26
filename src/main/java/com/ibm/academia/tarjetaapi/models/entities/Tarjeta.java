@@ -23,15 +23,7 @@ import static javax.persistence.GenerationType.SEQUENCE;
 //@Table(name = "tarjetas",schema = "tarjetas_schema")
 public class Tarjeta implements Serializable {
     @Id
-    @SequenceGenerator(
-            name = "ruleta_sequence",
-            sequenceName = "ruleta_sequence",
-            allocationSize = 1
-    )
-    @GeneratedValue(
-            strategy = SEQUENCE,
-            generator = "ruleta_sequence"
-    )
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     @Column(name = "id_tarjeta", updatable = false)
     private Long idTarjeta;
 
@@ -73,4 +65,38 @@ public class Tarjeta implements Serializable {
     public int hashCode() {
         return getClass().hashCode();
     }
+
+/*
+	public Tarjeta(Long idTarjeta, String nombreTarjeta, String preferencia, Integer edadMinima, Integer edadMaxima,
+			Double salarioMinimo, Double salarioMaximo) {
+		super();
+		this.idTarjeta = idTarjeta;
+		this.nombreTarjeta = nombreTarjeta;
+		this.preferencia = preferencia;
+		this.edadMinima = edadMinima;
+		this.edadMaxima = edadMaxima;
+		this.salarioMinimo = salarioMinimo;
+		this.salarioMaximo = salarioMaximo;
+	}
+*/
+
+	public Long getIdTarjeta() {
+		return idTarjeta;
+	}
+
+	public void setIdTarjeta(Long idTarjeta) {
+		this.idTarjeta = idTarjeta;
+	}
+
+	public String getNombreTarjeta() {
+		return nombreTarjeta;
+	}
+
+	public void setNombreTarjeta(String nombreTarjeta) {
+		this.nombreTarjeta = nombreTarjeta;
+	}
+
+	
+    
+    
 }

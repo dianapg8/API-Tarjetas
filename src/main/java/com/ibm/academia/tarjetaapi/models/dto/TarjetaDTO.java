@@ -9,7 +9,7 @@ import lombok.Setter;
 @Setter
 @Getter
 @NoArgsConstructor
-@AllArgsConstructor
+//@AllArgsConstructor
 public class TarjetaDTO {
     private Long id;
     private String nombre;
@@ -17,4 +17,21 @@ public class TarjetaDTO {
     private String usuarioCreacion;
     private Date fechaCreacion;
     */
+	public Long getId() {
+		return id;
+	}
+	public void setId(Long id) {
+		this.id = id;
+	}
+	public String getNombre() {
+		return nombre;
+	}
+	public void setNombre(String nombre) {
+		this.nombre = nombre;
+	}
+	public TarjetaDTO(Long id, String nombre) {
+		super();
+		this.id = id;
+		this.nombre = nombre;
+	}
 }
